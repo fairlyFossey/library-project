@@ -19,27 +19,3 @@
 // add a button to each book that can remove it from the library
 
 // add a button to each book that can toggle its read/unread status
-
-
-
-
-
-
-
-
-let arr = [];
-
-function Book(title) {
-    this.title = title;
-}
-
-function makeNewBook(title) {
-    arr.push(new Book(title));
-}
-
-
-makeNewBook("The Lord of the Rings");
-makeNewBook("On the Origin of Species");
-
-
-console.table(arr);
