@@ -1,1 +1,36 @@
-@import "reset-addon.css";
+@import "./reset-addon.css";
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 10fr 0.5fr;
+}
+
+header {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-content-cntr {
+    background-color: lightpink;
+
+    div:has(button) {
+        display: flex;
+        justify-content: end;
+    }
+
+    .book-collection-cntr {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+footer {
+    background-color: palegoldenrod;
+    display: flex;
+
+    div {
+        margin: auto;
+    }
+}
