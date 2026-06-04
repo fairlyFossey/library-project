@@ -8,21 +8,23 @@ body {
 
 header {
     background-color: aquamarine;
-    display: flex;
-    justify-content: space-between;
 }
 
 .main-content-cntr {
     background-color: lightpink;
 
-    div:has(button) {
-        display: flex;
-        justify-content: end;
+    .book-collection-cntr {
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(8, 150px);
+        grid-template-rows: 200px;
+        grid-auto-rows: 200px;
+        justify-content: space-around;
+        row-gap: 60px;
     }
 
-    .book-collection-cntr {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+    .book-card {
+        background-color: lightslategrey;
     }
 }
 
