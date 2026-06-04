@@ -16,8 +16,8 @@ header {
     .book-collection-cntr {
         padding: 30px;
         display: grid;
-        grid-template-columns: repeat(8, 150px);
-        grid-template-rows: 200px;
+        grid-template-columns: repeat(8, 200px);
+        grid-template-rows: 250px;
         grid-auto-rows: 200px;
         justify-content: space-around;
         row-gap: 60px;
@@ -25,6 +25,13 @@ header {
 
     .book-card {
         background-color: lightslategrey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        padding: 25px;
+        font-size: 1.4rem;
+        font-weight: 500;
     }
 }
 
