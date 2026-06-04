@@ -19,16 +19,36 @@ function addBookToLibrary(title, author, pageCount, hasFinished) {
 
 addBookToLibrary("The Lord of the Rings", "J.R. Tolkien", 840, false);
 addBookToLibrary("On the Origin of Species", "Charles Darwin", 524, true);
-console.table(library);
+// console.table(library);
 
 // create function that loops through array, displaying all books on the page 
+function displayBooks(source) {
 
-    // create an element (like a div) to be displayed 
+    // create a selector that targets where the books will display
+    const bookCollection = document.querySelector(".book-collection-cntr");
 
-    // add content from the respective book object and an html class identifier
+    // create a loop that goes through each object in array
+    for (const book of source) {
+        // create the divs to be displayed 
+        const card = document.createElement("div");
+        const title = document.createElement("div");
+        const author = document.createElement("div");
 
-    // append element to parent node on page
+        // add classes to the divs plus info from the book object
+        card.classList.toggle("book-card");
+        title.classList.toggle("book-title");
+        title.textContent = book.title;
+        author.classList.toggle("book-author");
+        author.textContent = book.author;
 
+        // append element to parent node on page
+        bookCollection.appendChild(card);
+        card.appendChild(title);
+        card.appendChild(author);
+    }
+}
+
+displayBooks(library);
 
 // add a button that allows users to add books to the library by filling out a form
 
