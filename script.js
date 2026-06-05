@@ -32,11 +32,11 @@ function displayBook(obj) {
 
     const title = document.createElement("div");
     title.classList.toggle("book-title");
-    title.textContent = book.title;
+    title.textContent = obj.title;
 
     const author = document.createElement("div");
     author.classList.toggle("book-author");
-    author.textContent = book.author;
+    author.textContent = obj.author;
 
     // add to dom
     bookCollection.appendChild(card);
