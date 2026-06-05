@@ -32,6 +32,7 @@ function displayBook(obj) {
     // create divs
     const card = document.createElement("div");
     card.classList.toggle("book-card");
+    card.dataset.id = obj.id;
 
     const title = document.createElement("div");
     title.classList.toggle("book-title");
