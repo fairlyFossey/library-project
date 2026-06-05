@@ -1,5 +1,6 @@
 const library = [];
 const bookCollection = document.querySelector(".book-collection-cntr");
+let dialog = document.querySelector("dialog");
 
 // book constructor
 function Book(title, author, pageCount, hasFinished) {
@@ -45,6 +46,10 @@ function displayBook(obj) {
 
 
 // button press opens modal-dialog form 
+    const openDialogButton = document.querySelector("#open-dialog")
+    openDialogButton.addEventListener("click", () => {
+        dialog.showModal();
+    });
 
     // form submission creates new book and displays it
 
