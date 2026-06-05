@@ -1,5 +1,4 @@
 const bookCollection = [];
-
 const bookCollectionCntr = document.querySelector(".book-collection-cntr");
 const dialog = document.querySelector("dialog");
 const form = document.querySelector("form");
@@ -28,50 +27,6 @@ function addBookToCollection(title, author, pageCount, hasFinished) {
     bookCollection.push(newBook);
 }
 
-
-// display books on page
-function displayBookCollection(arr) {
-    for (const obj of arr) {
-        displayBook(obj)
-    }
-}
-
-function displayBook(obj) {
-    // create divs
-    const card = document.createElement("div");
-    card.classList.toggle("book-card");
-
-    const title = document.createElement("div");
-    title.classList.toggle("book-title");
-    title.textContent = obj.title;
-
-    const author = document.createElement("div");
-    author.classList.toggle("book-author");
-    author.textContent = obj.author;
-
-    const buttonCntr = document.createElement("div");
-    buttonCntr.classList.toggle("book-buttons-cntr");
-
-    const deleteBtn = document.createElement("button");
-    deleteBtn.classList.toggle("delete-btn");
-    deleteBtn.textContent = "trash"
-    deleteBtn.dataset.id = obj.id;
-    
-    const readBtn = document.createElement("button");
-    readBtn.classList.toggle("read-btn");
-    readBtn.textContent = "read"
-    readBtn.dataset.id = obj.id;
-    
-    // add to dom
-    bookCollectionCntr.appendChild(card);
-    card.appendChild(title);
-    card.appendChild(author);
-    card.appendChild(buttonCntr);
-    buttonCntr.appendChild(deleteBtn);
-    buttonCntr.appendChild(readBtn);
-}
-
-
 // button opens dialog
 const openDialogButton = document.querySelector("#open-dialog")
 openDialogButton.addEventListener("click", () => {
@@ -94,15 +49,64 @@ submitBtn.addEventListener("click", (e) => {
     dialog.close();
 });
 
-// function to remove book from collection
-
-
+// remove book from collection/display
 const deleteBtns = document.querySelectorAll(".delete-btn");
 
 deleteBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-        console.log(e.target.dataset.id);
+        let displayCard = e.target.closest("[data-id]");
+        let nodeID = displayCard.dataset.id;
+
+        displayCard.remove();
+
+        // remove obj from arr
+        let indexToDelete = bookCollection.findIndex((book) => book.id == nodeID);
+        bookCollection.splice(indexToDelete, 1);
+        console.table(bookCollection);
     })
 })
 
 // function to toggle the read status of books
+
+
+
+// display books on page
+function displayBookCollection(arr) {
+    for (const obj of arr) {
+        displayBook(obj)
+    }
+}
+
+function displayBook(obj) {
+    // create divs
+    const card = document.createElement("div");
+    card.classList.toggle("book-card");
+    card.dataset.id = obj.id;
+
+    const title = document.createElement("div");
+    title.classList.toggle("book-title");
+    title.textContent = obj.title;
+
+    const author = document.createElement("div");
+    author.classList.toggle("book-author");
+    author.textContent = obj.author;
+
+    const buttonCntr = document.createElement("div");
+    buttonCntr.classList.toggle("book-buttons-cntr");
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.toggle("delete-btn");
+    deleteBtn.textContent = "trash"
+    
+    const readBtn = document.createElement("button");
+    readBtn.classList.toggle("read-btn");
+    readBtn.textContent = "read"
+    
+    // add to dom
+    bookCollectionCntr.appendChild(card);
+    card.appendChild(title);
+    card.appendChild(author);
+    card.appendChild(buttonCntr);
+    buttonCntr.appendChild(deleteBtn);
+    buttonCntr.appendChild(readBtn);
+}
