@@ -1,8 +1,11 @@
 const bookCollection = [];
-const bookCollectionCntr = document.querySelector(".book-collection-cntr");
-let dialog = document.querySelector("dialog");
 
-// book constructor
+const bookCollectionCntr = document.querySelector(".book-collection-cntr");
+const dialog = document.querySelector("dialog");
+const form = document.querySelector("form");
+const submitBtn = document.querySelector('input[type="submit"]')
+
+// book constructor 
 function Book(title, author, pageCount, hasFinished) {
     this.title = title;
     this.author = author;
@@ -11,7 +14,7 @@ function Book(title, author, pageCount, hasFinished) {
     this.id = crypto.randomUUID();
 }
 
-// store books in arr
+// make new book and add to array
 function addBookToCollection(title, author, pageCount, hasFinished) {
     let newBook = new Book(title, author, pageCount, hasFinished);
     bookCollection.push(newBook);
@@ -45,13 +48,28 @@ function displayBook(obj) {
 }
 
 
-// button press opens modal-dialog form 
-    const openDialogButton = document.querySelector("#open-dialog")
-    openDialogButton.addEventListener("click", () => {
-        dialog.showModal();
-    });
+// button opens dialog
+const openDialogButton = document.querySelector("#open-dialog")
+openDialogButton.addEventListener("click", () => {
+    form.reset();
+    dialog.showModal();
+});
 
-    // form submission creates new book and displays it
+// create new book from dialog
+submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // store field data
+    let title = form.querySelector("#title").value;
+    let author = form.querySelector("#author").value;
+    let pageCount = form.querySelector("#pages").value;
+    let hasFinished = form.querySelector("#read").checked;
+
+    addBookToCollection(title, author, pageCount, hasFinished);
+    displayBook(bookCollection.at(-1));
+    dialog.close();
+});
+
 
 // function to remove book from collection
 
