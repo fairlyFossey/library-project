@@ -3,7 +3,15 @@ const bookCollection = [];
 const bookCollectionCntr = document.querySelector(".book-collection-cntr");
 const dialog = document.querySelector("dialog");
 const form = document.querySelector("form");
-const submitBtn = document.querySelector('input[type="submit"]')
+const submitBtn = document.querySelector('input[type="submit"]');
+
+
+// on page load
+addBookToCollection("The Lord of the Rings", "J.R. Tolkien", 840, false);
+addBookToCollection("On the Origin of Species", "Charles Darwin", 524, true);
+
+displayBookCollection(bookCollection);
+
 
 // book constructor 
 function Book(title, author, pageCount, hasFinished) {
@@ -32,7 +40,6 @@ function displayBook(obj) {
     // create divs
     const card = document.createElement("div");
     card.classList.toggle("book-card");
-    card.dataset.id = obj.id;
 
     const title = document.createElement("div");
     title.classList.toggle("book-title");
@@ -48,10 +55,12 @@ function displayBook(obj) {
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.toggle("delete-btn");
     deleteBtn.textContent = "trash"
+    deleteBtn.dataset.id = obj.id;
     
     const readBtn = document.createElement("button");
     readBtn.classList.toggle("read-btn");
     readBtn.textContent = "read"
+    readBtn.dataset.id = obj.id;
     
     // add to dom
     bookCollectionCntr.appendChild(card);
@@ -85,12 +94,15 @@ submitBtn.addEventListener("click", (e) => {
     dialog.close();
 });
 
-
 // function to remove book from collection
 
+
+const deleteBtns = document.querySelectorAll(".delete-btn");
+
+deleteBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        console.log(e.target.dataset.id);
+    })
+})
+
 // function to toggle the read status of books
-
-addBookToCollection("The Lord of the Rings", "J.R. Tolkien", 840, false);
-addBookToCollection("On the Origin of Species", "Charles Darwin", 524, true);
-
-displayBookCollection(bookCollection);
