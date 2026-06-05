@@ -41,10 +41,24 @@ function displayBook(obj) {
     author.classList.toggle("book-author");
     author.textContent = obj.author;
 
+    const buttonCntr = document.createElement("div");
+    buttonCntr.classList.toggle("book-buttons-cntr");
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.toggle("delete-btn");
+    deleteBtn.textContent = "trash"
+    
+    const readBtn = document.createElement("button");
+    readBtn.classList.toggle("read-btn");
+    readBtn.textContent = "read"
+    
     // add to dom
     bookCollectionCntr.appendChild(card);
     card.appendChild(title);
     card.appendChild(author);
+    card.appendChild(buttonCntr);
+    buttonCntr.appendChild(deleteBtn);
+    buttonCntr.appendChild(readBtn);
 }
 
 
