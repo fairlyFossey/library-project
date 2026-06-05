@@ -1,5 +1,5 @@
-const library = [];
-const bookCollection = document.querySelector(".book-collection-cntr");
+const bookCollection = [];
+const bookCollectionCntr = document.querySelector(".book-collection-cntr");
 let dialog = document.querySelector("dialog");
 
 // book constructor
@@ -12,9 +12,9 @@ function Book(title, author, pageCount, hasFinished) {
 }
 
 // store books in arr
-function addBookToLibrary(title, author, pageCount, hasFinished) {
+function addBookToCollection(title, author, pageCount, hasFinished) {
     let newBook = new Book(title, author, pageCount, hasFinished);
-    library.push(newBook);
+    bookCollection.push(newBook);
 }
 
 
@@ -39,7 +39,7 @@ function displayBook(obj) {
     author.textContent = obj.author;
 
     // add to dom
-    bookCollection.appendChild(card);
+    bookCollectionCntr.appendChild(card);
     card.appendChild(title);
     card.appendChild(author);
 }
@@ -57,7 +57,7 @@ function displayBook(obj) {
 
 // function to toggle the read status of books
 
-addBookToLibrary("The Lord of the Rings", "J.R. Tolkien", 840, false);
-addBookToLibrary("On the Origin of Species", "Charles Darwin", 524, true);
+addBookToCollection("The Lord of the Rings", "J.R. Tolkien", 840, false);
+addBookToCollection("On the Origin of Species", "Charles Darwin", 524, true);
 
-displayBookCollection(library);
+displayBookCollection(bookCollection);
