@@ -105,4 +105,12 @@ function displayBook(obj) {
         bookCollection.splice(indexToDelete, 1);
         console.table(bookCollection);
     })
+
+    // event listener for read button
+    readBtn.addEventListener("click", (e) => {
+        let nodeID = e.target.closest('[data-id]').dataset.id;
+        let targetBook = bookCollection.find((book) => book.id == nodeID);
+        
+        targetBook.hasFinished = !targetBook.hasFinished;
+    })
 }
