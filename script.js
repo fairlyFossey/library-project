@@ -49,23 +49,6 @@ submitBtn.addEventListener("click", (e) => {
     dialog.close();
 });
 
-// remove book from collection/display
-const deleteBtns = document.querySelectorAll(".delete-btn");
-
-deleteBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        let displayCard = e.target.closest("[data-id]");
-        let nodeID = displayCard.dataset.id;
-
-        displayCard.remove();
-
-        // remove obj from arr
-        let indexToDelete = bookCollection.findIndex((book) => book.id == nodeID);
-        bookCollection.splice(indexToDelete, 1);
-        console.table(bookCollection);
-    })
-})
-
 // function to toggle the read status of books
 
 
@@ -109,4 +92,17 @@ function displayBook(obj) {
     card.appendChild(buttonCntr);
     buttonCntr.appendChild(deleteBtn);
     buttonCntr.appendChild(readBtn);
+
+    // event listener for delete button
+    deleteBtn.addEventListener("click", (e) => {
+        let displayCard = e.target.closest("[data-id]");
+        let nodeID = displayCard.dataset.id;
+
+        displayCard.remove();
+
+        // remove obj from arr
+        let indexToDelete = bookCollection.findIndex((book) => book.id == nodeID);
+        bookCollection.splice(indexToDelete, 1);
+        console.table(bookCollection);
+    })
 }
