@@ -16,10 +16,11 @@ header {
     .book-collection-cntr {
         padding: 30px;
         display: grid;
-        grid-template-columns: repeat(8, 200px);
+        grid-template-columns: repeat(auto-fit, 200px);
         grid-template-rows: 250px;
-        grid-auto-rows: 200px;
-        justify-content: space-around;
+        grid-auto-rows: 250px;
+        justify-content: center;
+        column-gap: 60px;
         row-gap: 60px;
     }
 
@@ -27,11 +28,20 @@ header {
         background-color: lightslategrey;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: end;
         text-align: center;
         padding: 25px;
         font-size: 1.4rem;
         font-weight: 500;
+
+        .book-title {
+            margin-bottom: auto;
+        }
+
+        .book-buttons-cntr {
+            display: flex;
+            justify-content: space-around;
+        }
     }
 }
 
