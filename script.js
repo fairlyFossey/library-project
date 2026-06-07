@@ -77,14 +77,14 @@ function displayBook(obj) {
     const buttonCntr = document.createElement("div");
     buttonCntr.classList.toggle("book-buttons-cntr");
 
-    const deleteBtn = document.createElement("button");
+    const deleteBtn = document.createElement("img");
     deleteBtn.classList.toggle("delete-btn");
-    deleteBtn.textContent = "trash"
+    deleteBtn.src = "./img/trashcan.svg";
     
     const readBtn = document.createElement("img");
     obj.hasFinished ? readBtn.src = "./img/bookmark_check.svg" : readBtn.src = "./img/bookmark_empty.svg";
     readBtn.classList.toggle("read-btn");
-        
+
     // add to dom
     bookCollectionCntr.appendChild(card);
     card.appendChild(title);
