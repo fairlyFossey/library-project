@@ -1,5 +1,11 @@
 @import "./reset-addon.css";
 
+:root { 
+    --color-dark-navy: #13293D;
+    --color-lime-green-dull: #93AB13;
+    --color-lime-green-brighter: #bad526;
+}
+
 body {
     height: 100vh;
     display: grid;
@@ -7,22 +13,20 @@ body {
 }
 
 header {
-    background-color: aquamarine;
+    background-color: lightgrey;
 }
 
-.main-content-cntr {
-    background-color: lightpink;
 
-    .book-collection-cntr {
-        padding: 30px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 200px);
-        grid-template-rows: 250px;
-        grid-auto-rows: 250px;
-        justify-content: center;
-        column-gap: 60px;
-        row-gap: 60px;
-    }
+.book-collection-cntr {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-rows: 250px;
+    grid-auto-rows: 250px;
+    justify-content: center;
+    column-gap: 60px;
+    row-gap: 60px;
+}
 
     .book-card {
         background-color: lightslategrey;
@@ -34,19 +38,18 @@ header {
         font-size: 1.4rem;
         font-weight: 500;
 
-        .book-title {
-            margin-bottom: auto;
-        }
+    .book-title {
+        margin-bottom: auto;
+    }
 
-        .book-buttons-cntr {
-            display: flex;
-            justify-content: space-around;
-        }
+    .book-buttons-cntr {
+        display: flex;
+        justify-content: space-around;
     }
 }
 
 footer {
-    background-color: palegoldenrod;
+    background-color: lightgrey;
     display: flex;
 
     div {
