@@ -81,10 +81,10 @@ function displayBook(obj) {
     deleteBtn.classList.toggle("delete-btn");
     deleteBtn.textContent = "trash"
     
-    const readBtn = document.createElement("button");
+    const readBtn = document.createElement("img");
+    obj.hasFinished ? readBtn.src = "./img/bookmark_check.svg" : readBtn.src = "./img/bookmark_empty.svg";
     readBtn.classList.toggle("read-btn");
-    readBtn.textContent = "read"
-    
+        
     // add to dom
     bookCollectionCntr.appendChild(card);
     card.appendChild(title);
@@ -112,5 +112,7 @@ function displayBook(obj) {
         let targetBook = bookCollection.find((book) => book.id == nodeID);
         
         targetBook.hasFinished = !targetBook.hasFinished;
+
+        targetBook.hasFinished ? e.target.src = "./img/bookmark_check.svg" : e.target.src = "./img/bookmark_empty.svg";
     })
 }
