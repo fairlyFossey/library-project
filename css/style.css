@@ -79,13 +79,9 @@ header {
         font-weight: 600;
         gap: 5px;
 
-        div {
+        span {
             position: relative;
             top: 2px;
-        }
-
-        img {
-            height: 100%;
         }
     }
 }
