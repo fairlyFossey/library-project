@@ -76,10 +76,18 @@ function displayBook(obj) {
     const deleteBtn = document.createElement("img");
     deleteBtn.classList.toggle("delete-btn");
     deleteBtn.src = "./img/trashcan.svg";
+    deleteBtn.alt = "Delete this book from your collection.";
 
     const readBtn = document.createElement("img");
-    obj.hasFinished ? readBtn.src = "./img/bookmark_check.svg" : readBtn.src = "./img/bookmark_empty.svg";
+    if (obj.hasFinished) {
+        readBtn.src = "./img/bookmark_check.svg"
+        readBtn.alt = "Mark this book as unfinished."
+    }  else { 
+        readBtn.src = "./img/bookmark_empty.svg"
+        readBtn.alt = "Mark this book as finished."
+    }
     readBtn.classList.toggle("read-btn");
+    
 
     // add to dom
     bookCollectionCntr.appendChild(card);
