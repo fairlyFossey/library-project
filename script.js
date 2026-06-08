@@ -6,7 +6,7 @@ const submitBtn = document.querySelector('input[type="submit"]');
 
 
 // on page load
-addBookToCollection("The Lord of the Rings", "J.R. Tolkien", 840, false);
+addBookToCollection("The Lord of the Rings", "J.R.R. Tolkien", 840, false);
 addBookToCollection("On the Origin of Species", "Charles Darwin", 524, true);
 
 displayBookCollection(bookCollection);
