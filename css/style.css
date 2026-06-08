@@ -149,3 +149,40 @@ footer {
         font-weight: 500;
     }
 }
+
+/* DIALOG */
+dialog {
+    border-radius: 5%;
+    box-shadow: var(--shadow-elevation-high);
+    outline: 6px ridge var(--color-lime-green-dull);
+
+    &::backdrop {
+        backdrop-filter: blur(10px);
+    }
+}
+
+form {
+  display: grid;
+  grid-template-columns: 150px 300px;
+  row-gap: 25px;
+  padding: 20px 10px 0px 10px;
+  font-weight: 600;
+
+  label {
+    text-decoration: 3px underline var(--color-lime-green-dull);
+  }
+
+  #read {
+    justify-self: start;
+  }
+
+  input[type="submit"] {
+    grid-column: 2 / 3;
+    justify-self: end;
+
+    background-color: var(--color-lime-green-dull);
+    border-radius: 10px;
+    padding: 7px 20px;
+    font-weight: 600;
+  }
+}
