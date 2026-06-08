@@ -49,10 +49,6 @@ submitBtn.addEventListener("click", (e) => {
     dialog.close();
 });
 
-// function to toggle the read status of books
-
-
-
 // display books on page
 function displayBookCollection(arr) {
     for (const obj of arr) {
@@ -80,7 +76,7 @@ function displayBook(obj) {
     const deleteBtn = document.createElement("img");
     deleteBtn.classList.toggle("delete-btn");
     deleteBtn.src = "./img/trashcan.svg";
-    
+
     const readBtn = document.createElement("img");
     obj.hasFinished ? readBtn.src = "./img/bookmark_check.svg" : readBtn.src = "./img/bookmark_empty.svg";
     readBtn.classList.toggle("read-btn");
@@ -110,7 +106,7 @@ function displayBook(obj) {
     readBtn.addEventListener("click", (e) => {
         let nodeID = e.target.closest('[data-id]').dataset.id;
         let targetBook = bookCollection.find((book) => book.id == nodeID);
-        
+
         targetBook.hasFinished = !targetBook.hasFinished;
 
         targetBook.hasFinished ? e.target.src = "./img/bookmark_check.svg" : e.target.src = "./img/bookmark_empty.svg";

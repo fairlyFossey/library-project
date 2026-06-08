@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
+    <!-- HEADER -->
     <header>
         <div class="page-branding-cntr">
             <img class="logo" src="./img/logo.svg" alt="" height="150px" width="auto">
@@ -16,22 +19,24 @@
                 <div class="page-name">Library</div>
             </div>
         </div>
-        <div class="new-book-btn-cntr">
-            <div class="btn-wrpr">
-                <button id="open-dialog">
-                    <div>New Book</div>
-                    <img class="add-book-btn" src="./img/add-new.svg" height="75px" width="auto">
-                </button>
-            </div>
+        <div class="new-book-btn-wrpr">
+            <button id="open-dialog">
+                <div>New Book</div>
+                <img class="add-book-btn" src="./img/add-new.svg" height="75px" width="auto">
+            </button>
         </div>
     </header>
 
+    <!-- MAIN -->
     <div class="book-collection-cntr"></div>
 
+    <!-- FOOTER -->
     <footer>
-        <div>Logo is courtesy of <a href="https://unsplash.com/@publicdomainvectors/illustrations">Public Domain Vectors</a> at <a href="https://unsplash.com/">Unsplash</a> </div>
+        <div>Logo is courtesy of <a href="https://unsplash.com/@publicdomainvectors/illustrations">Public Domain
+                Vectors</a> at <a href="https://unsplash.com/">Unsplash</a> </div>
     </footer>
 
+    <!-- DIALOG -->
     <dialog id="new-book-dialog" closedby="any">
         <form>
             <label for="title">Book Title:</label>
@@ -48,6 +53,7 @@
             <input type="submit">
         </form>
     </dialog>
-    
+
 </body>
+
 </html>

@@ -2,10 +2,7 @@
 
 :root {
     /* colors */
-    --color-blue-deep-space: #13293D;
-    --color-green-granite: #3B5249;
     --color-lime-green-dull: #93AB13;
-    --color-lime-green-brighter: #bad526;
     --color-white-pure: #fff;
     --color-white-off: #F9FAFB;
     /* shadows */
@@ -62,20 +59,17 @@ header {
         right: 20px;
 
         :last-child {
-            /* background-color: blue; */
             position: relative;
             bottom: 15px;
         }
     }
 }
 
-.new-book-btn-cntr {
+.new-book-btn-wrpr {
     display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
     margin-right: 35px;
-
-    .btn-wrpr {
-        margin: auto;
-    }
 
     button {
         display: flex;
@@ -89,7 +83,7 @@ header {
             position: relative;
             top: 2px;
         }
-        
+
         img {
             height: 100%;
         }
@@ -109,19 +103,18 @@ header {
     row-gap: 60px;
 }
 
-    .book-card {
-        background-color: var(--color-white-pure);
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        text-align: center;
-        padding: 25px;
-        font-size: 1.4rem;
-        font-weight: 500;
-        border-radius: 5%;
-        box-shadow: var(--shadow-elevation-high);
-        outline: 6px ridge var(--color-lime-green-dull);
-        
+.book-card {
+    background-color: var(--color-white-pure);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+    padding: 25px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 5%;
+    box-shadow: var(--shadow-elevation-high);
+    outline: 6px ridge var(--color-lime-green-dull);
 
     .book-title {
         margin-bottom: auto;
