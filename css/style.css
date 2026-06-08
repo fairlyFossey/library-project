@@ -127,6 +127,11 @@ header {
 
     .book-title {
         margin-bottom: auto;
+        font-weight: 700;
+    }
+
+    .book-author {
+        font-style: italic;
     }
 
     .book-buttons-cntr {

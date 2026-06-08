@@ -14,7 +14,7 @@ displayBookCollection(bookCollection);
 
 // book constructor 
 function Book(title, author, pageCount, hasFinished) {
-    this.title = title;
+    this.title = title.toUpperCase();
     this.author = author;
     this.pageCount = pageCount;
     this.hasFinished = hasFinished;
