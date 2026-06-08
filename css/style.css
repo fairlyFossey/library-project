@@ -17,10 +17,10 @@ header {
     height: 135px;
     display: flex;
     justify-content: space-between;
+}
 
-    .page-branding-cntr {
-        display: flex;
-    }
+.page-branding-cntr {
+    display: flex;
 
     .logo {
         position: relative;
@@ -42,6 +42,32 @@ header {
     }
 }
 
+.new-book-btn-cntr {
+    display: flex;
+    margin-right: 35px;
+
+    .btn-wrpr {
+        margin: auto;
+    }
+
+    button {
+        display: flex;
+        background-color: var(--color-lime-green-dull);
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-weight: 600;
+        gap: 5px;
+
+        div {
+            position: relative;
+            top: 2px;
+        }
+        
+        img {
+            height: 100%;
+        }
+    }
+}
 
 .book-collection-cntr {
     padding: 30px;
