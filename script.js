@@ -88,14 +88,25 @@ function displayBook(obj) {
         readBtn.alt = "Mark this book as finished."
     }
     readBtn.classList.toggle("read-btn");
-    
 
+    // page count
+    const pagesIcon = document.createElement("img");
+    pagesIcon.classList.toggle("book-page-icon");
+    pagesIcon.src = "./img/empty-book.svg";
+  
+    const pageCount = document.createElement("span");
+    pageCount.classList.toggle("book-page-count");
+    pageCount.textContent = obj.pageCount;
+
+    
     // add to dom
     bookCollectionCntr.appendChild(card);
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(buttonCntr);
     buttonCntr.appendChild(deleteBtn);
+    buttonCntr.appendChild(pagesIcon);
+    buttonCntr.appendChild(pageCount);
     buttonCntr.appendChild(readBtn);
 
     // event listener for delete button
